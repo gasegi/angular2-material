@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-layout>
+  <md-sidenav mode="side" #start (open)="closeStartButton.focus()">
+    Start Sidenav.
+    <br>
+    <button md-button #closeStartButton (click)="start.close()">Close</button>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <i (click)="start.toggle()" class="material-icons app-toolbar-menu">menu</i> NDRM-RC!
+
+  </md-toolbar>
+  <div class="app-content">
+    <app-memo-list [memos]="memos"></app-memo-list>
+
+  </div>
+</md-sidenav-layout>
