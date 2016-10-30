@@ -12,34 +12,21 @@ import { MemoListComponent } from './memo-list/memo-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MemoDetailComponent } from './memo-detail/memo-detail.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    MemoListComponent,
-    DashboardComponent,
-    MemoDetailComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule,
-    RouterModule.forRoot([{
-      path: '',
-      redirectTo: '/dashboard',
-      pathMatch: 'full'
-    }, {
-        path: 'dashboard',
-        component: DashboardComponent
-      }, {
-        path: 'memos',
-        component: MemoListComponent
-      }, {
-        path: 'detail/:id',
-        component: MemoDetailComponent
-      },
-
-    ])
+    AppRoutingModule
+  ],
+  declarations: [
+    AppComponent,
+    MemoListComponent,
+    DashboardComponent,
+    MemoDetailComponent
   ],
   providers: [MemoService],
   bootstrap: [AppComponent]

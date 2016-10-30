@@ -1,7 +1,11 @@
 <md-sidenav-layout>
   <md-sidenav mode="side" #start (open)="closeStartButton.focus()">
-    Start Sidenav.
-    <br>
+    <div>Start Sidenav.</div>
+      <nav>
+        <div><a routerLink="/dashboard">DashBoard</a></div>
+        <div><a routerLink="/memos">Memos</a></div>
+        <div><a routerLink="/detail/11">/detail/11</a></div>
+      </nav>
     <button md-button #closeStartButton (click)="start.close()">Close</button>
   </md-sidenav>
 
@@ -15,7 +19,6 @@
       <a routerLink="/detail/11">/detail/11</a>
     </nav>
     <router-outlet></router-outlet>
-    <app-memo-list [memos]="memos"></app-memo-list>
 
   </div>
 </md-sidenav-layout>

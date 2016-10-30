@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Memo } from '../models/memo';
 import { MemoService } from '../services/memo.service';
@@ -11,10 +12,17 @@ import { MemoService } from '../services/memo.service';
 export class MemoListComponent implements OnInit {
   @Input() memos: Memo[];
 
-  constructor() { }
+  constructor(
+    private memoService: MemoService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.memoService.getMemos().then(memos => this.memos = memos);
   }
 
-  gotoDetail(memo: Memo): void { /* not implemented yet */}
+  gotoDetail(memo: Memo): void {
+    let link = ['/detail', memo.id];
+    this.router.navigate(link);
+  }
 }

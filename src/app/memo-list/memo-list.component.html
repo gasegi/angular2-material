@@ -1,5 +1,5 @@
 
-  <li *ngFor="let memo of memos">
+  <li *ngFor="let memo of memos" (click)="gotoDetail(memo)">
 
-    <md-card>{{memo.memo}}</md-card>
+    <md-card md-ripple>{{memo.memo}}</md-card>
   </li>
