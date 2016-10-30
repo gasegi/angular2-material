@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MemoService } from './services/memo.service';
-
 import { Memo } from './models/memo';
+import { MemoService } from './services/memo.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,7 @@ import { Memo } from './models/memo';
 })
 export class AppComponent implements OnInit {
   memos: Memo[];
-  
+
   constructor(
     private memoService: MemoService
   ) { }

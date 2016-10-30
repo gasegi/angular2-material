@@ -1,0 +1,8 @@
+<h3>Top Memo</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let memo of memos" (click)="gotoDetail(memo)" class="col-1-4">
+    <div class="module memo">
+      <h4>{{memo.memo}}</h4>
+    </div>
+  </div>
+</div>

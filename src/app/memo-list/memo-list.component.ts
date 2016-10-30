@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { Memo } from '../models/memo';
+import { MemoService } from '../services/memo.service';
 
 @Component({
   selector: 'app-memo-list',
@@ -14,4 +16,5 @@ export class MemoListComponent implements OnInit {
   ngOnInit() {
   }
 
+  gotoDetail(memo: Memo): void { /* not implemented yet */}
 }

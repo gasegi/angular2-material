@@ -10,6 +10,11 @@
 
   </md-toolbar>
   <div class="app-content">
+    <nav>
+      <a routerLink="/memos">Memos</a>
+      <a routerLink="/detail/11">/detail/11</a>
+    </nav>
+    <router-outlet></router-outlet>
     <app-memo-list [memos]="memos"></app-memo-list>
 
   </div>

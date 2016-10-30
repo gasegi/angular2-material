@@ -16,8 +16,15 @@ const memos: Memo[] = [
 
 @Injectable()
 export class MemoService {
+
   getMemos(): Promise<Memo[]> {
     return Promise.resolve(memos);
   }
+
+  getMemo(id: number): Promise<Memo> {
+    return this.getMemos()
+      .then(memos => memos.find(memo => memo.id === id));
+  }
+
 
 }
